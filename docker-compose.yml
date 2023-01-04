@@ -1,0 +1,13 @@
+version: "2"
+services:
+  shopping-cart:
+    container_name: ${CONTAINER_NAME}
+    image: ${IMAGE_NAME}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${INTERNAL_PORT}:${EXTERNAL_PORT}
+    environment:
+      EXPOSE_PORT: ${INTERNAL_PORT},
+      NODE_ENV: ${NODE_ENV}
